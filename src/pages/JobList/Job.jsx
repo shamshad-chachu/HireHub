@@ -20,7 +20,7 @@ const Job = () => {
   }, []);
 
   // Filter jobs based on search query
-  const filteredJobs = jobLists.filter(job =>
+  const filteredJobs = jobLists?.filter(job =>
     job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.loc?.toLowerCase().includes(searchQuery.toLowerCase())
