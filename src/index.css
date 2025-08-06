@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+body{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+form label,input{
+    width: 100%;
+}
+form label{
+  Margin-top: 8px;
+}
