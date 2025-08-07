@@ -10,7 +10,7 @@ const Job = () => {
       try {
         const response = await fetch("https://hirehub-springboot.onrender.com/findAll");
         const result = await response.json();
-        setJobList(result);
+        // setJobList(result);
         console.log(result);
       } catch (e) {
         console.log(e);
@@ -20,7 +20,7 @@ const Job = () => {
   }, []);
 
   // Filter jobs based on search query
-  const filteredJobs = jobLists?.filter(job =>
+  const filteredJobs = jobLists.filter(job =>
     job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.loc?.toLowerCase().includes(searchQuery.toLowerCase())
