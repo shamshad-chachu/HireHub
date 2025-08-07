@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const JobCard = ({job}) => {
   const [apply,setApply] =useState(false)
-
+    console.log(job);
   return (
     <div className="p-6">
                   <h3 className="text-xl font-bold text-slate-800 mb-2">{job.title}</h3>
