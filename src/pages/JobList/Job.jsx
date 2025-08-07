@@ -10,7 +10,7 @@ const Job = () => {
       try {
         const response = await fetch("https://hirehub-springboot.onrender.com/findAll");
         const result = await response.json();
-        // setJobList(result);
+        setJobList(result);
         console.log(result);
       } catch (e) {
         console.log(e);
