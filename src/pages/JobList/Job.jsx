@@ -8,7 +8,7 @@ const Job = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await fetch("http://localhost:8082/findAll");
+        const response = await fetch("https://hirehub-springboot.onrender.com/findAll");
         const result = await response.json();
         setJobList(result);
         console.log(result);

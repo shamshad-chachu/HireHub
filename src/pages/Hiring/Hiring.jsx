@@ -10,7 +10,7 @@ const Hiring = () => {
     console.log(formValue);
 
     try {
-      const response = await fetch("http://localhost:8082/employee", {
+      const response = await fetch("https://hirehub-springboot.onrender.com/employee", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
