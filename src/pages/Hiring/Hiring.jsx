@@ -37,10 +37,14 @@ const Hiring = () => {
         <h1 className="text-3xl font-bold text-center text-gray-800">Job Posting Details</h1>
         <form className="space-y-6" onSubmit={Handeldata}>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div>
+            {/* <div>
               <label htmlFor="id" className="block text-sm font-medium text-gray-700">Job ID</label>
               <input type="text" id="id" name="id" className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="e.g., 12345" required />
-            </div>
+              </div> */}
+              <div>
+                <label htmlFor="title" className="block text-sm font-medium text-gray-700">Job Title</label>
+                <input type="text" id="title" name="title" className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="e.g., Software Engineer" required />
+              </div>
             <div>
               <label htmlFor="location" className="block text-sm font-medium text-gray-700">Location</label>
               <input type="text" id="location" name="loc" className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="e.g., San Francisco, CA" required />
@@ -51,10 +55,6 @@ const Hiring = () => {
             <div>
               <label htmlFor="experience" className="block text-sm font-medium text-gray-700">Experience Level</label>
               <input type="text" id="experience" name="exp" className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="e.g., Senior" required />
-            </div>
-            <div>
-              <label htmlFor="title" className="block text-sm font-medium text-gray-700">Job Title</label>
-              <input type="text" id="title" name="title" className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="e.g., Software Engineer" required />
             </div>
           </div>
           
