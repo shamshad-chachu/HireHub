@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import JobCard from '../../components/JobCard';
-
+import { jobs } from '../../assets/jobs';
 const Job = () => {
   const [jobLists, setJobList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,12 +20,24 @@ const Job = () => {
   }, []);
 
   // Filter jobs based on search query
-  const filteredJobs = jobLists.filter(job =>
+
+  /* const filteredJobs = jobLists.filter(job =>
     job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.loc?.toLowerCase().includes(searchQuery.toLowerCase())
   );
+*/
 
+const filteredJobs = jobs.filter(job =>
+  job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  job.loc?.toLowerCase().includes(searchQuery.toLowerCase()))
+    || 
+  jobLists.filter(job =>
+  job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  job.loc?.toLowerCase().includes(searchQuery.toLowerCase())
+);
   return (
     <div className="bg-slate-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -46,11 +58,12 @@ const Job = () => {
             className="w-full px-5 py-3 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
           />
         </div>
+         
 
         {filteredJobs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredJobs.map((job) => (
-              <div key={job.id} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-gray-200">
+            {filteredJobs.map((job,i) => (
+              <div key={job.id || i} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-gray-200">
                  <JobCard job={job}/>
               </div>
             ))}
