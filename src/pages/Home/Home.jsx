@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import img from '../../assets/img.jpg'
-
+import LoginRegister from '../Login/Login&Register'
 const Home = () => {
+  const[showsingin,setShowSignin] = useState(false)
+  const[isloged,setIsLoged] = useState(false);
+
+  // if(isloged){
+  //   setTimeout(()=>setIsLoged(false),3000)
+  // }
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-sans antialiased p-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-sans antialiased p-4 relative">
+      <div className='absolute top-2 top-md-5 lg-top-2 shadow-lg right-10 p-2 rounded-full bg-blue-400 text-white font-bold' onClick={()=>setShowSignin(true)}>Login</div>
+      {isloged&&<div className='absolute text-green-500 shadow-lg top-1/12 right-10 md-right-20 bg-white text-2xl p-5 rounded-xl'> login Success</div>}
+      <div className='absolute'>{showsingin&&<LoginRegister setShowSignin={setShowSignin} setIsLoged={setIsLoged}/>}</div>
       <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row-reverse items-center justify-between gap-12 text-center md:text-left">
         
         {/* Visual Section with Responsive Image */}
-        <div className="md:w-1/2 w-full flex justify-center">
+        <div className="md-mt-0 mt-10 md:w-1/2 w-full flex justify-center">
           <div className="w-full max-w-md aspect-square rounded-3xl shadow-2xl overflow-hidden">
             <img src={img} alt="A professional office setting" className="object-cover w-full h-full" />
           </div>
