@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-sans antialiased p-4 relative">
       <div className='absolute top-2 top-md-5 lg-top-2 shadow-lg right-10 p-2 rounded-full bg-blue-50 text-black font-bold' onClick={()=>setShowSignin(true)}><i className="fa-solid fa-user text-2xl"></i></div>
-      {isloged&&<div className='absolute text-green-500 shadow-lg top-9/12 md-top-1/12 md-50% md-right-10 md-right-20 bg-white/100 text-2xl p-5 rounded-xl'> login Success</div>}
+      {isloged&&<div className='absolute text-green-500 shadow-lg  md:top-1/12 md-50%  md:right-20 bg-white/100 text-2xl p-5 rounded-xl'> login Success</div>}
       <div className='absolute top-0 '>{showsingin&&<LoginRegister setShowSignin={setShowSignin} setIsLoged={setIsLoged}/>}</div>
       <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row-reverse items-center justify-between gap-12 text-center md:text-left">
         

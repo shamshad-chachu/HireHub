@@ -36,7 +36,7 @@ const Login = ({setIsRegigterd,setShowSignin,setIsLoged}) => {
       <button type="submit" className="w-full px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-300">
         Login
       </button>
-      {newUser&&<p className='text-sm font-medium text-red-700 mt-5'>User Not Found</p>}
+      {newUser&&<p className='text-sm font-medium text-red-700 mt-5'>Invalid Username! / password</p>}
     </form>
     <p className='text-sm font-medium text-gray-700 text-center'>Create a new account  <span onClick={()=>{setIsRegigterd(false)}} className='text-blue-600'>Click here</span></p>
 
