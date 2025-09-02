@@ -8,7 +8,7 @@ const Job = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await fetch("https://hirehub-springboot.onrender.com/findAll");
+        const response = await fetch("https://hirehub-springboot.onrender.com/Job/findAll");
         const result = await response.json();
         setJobList(result);
         console.log(result);
@@ -21,23 +21,23 @@ const Job = () => {
 
   // Filter jobs based on search query
 
-  /* const filteredJobs = jobLists.filter(job =>
+  const filteredJobs = jobLists.filter(job =>
     job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    job.loc?.toLowerCase().includes(searchQuery.toLowerCase())
+    job.location?.toLowerCase().includes(searchQuery.toLowerCase())
   );
-*/
 
-const filteredJobs = jobs.filter(job =>
-  job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  job.loc?.toLowerCase().includes(searchQuery.toLowerCase()))
-    || 
-  jobLists.filter(job =>
-  job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-  job.loc?.toLowerCase().includes(searchQuery.toLowerCase())
-);
+
+// const filteredJobs = jobs.filter(job =>
+//   job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//   job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//   job.loc?.toLowerCase().includes(searchQuery.toLowerCase()))
+//     || 
+//   jobLists.filter(job =>
+//   job.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//   job.des?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+//   job.loc?.toLowerCase().includes(searchQuery.toLowerCase())
+// );
   return (
     <div className="bg-slate-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
