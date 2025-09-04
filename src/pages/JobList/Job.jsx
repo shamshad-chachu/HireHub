@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import JobCard from '../../components/JobCard';
+import JobCard from '../../components/JobCard/JobCard';
 import { jobs } from '../../assets/jobs';
 const Job = () => {
   const [jobLists, setJobList] = useState([]);
