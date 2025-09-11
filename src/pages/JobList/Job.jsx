@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import JobCard from '../../components/JobCard/JobCard';
 import { jobs } from '../../assets/jobs';
+import LoadingCards from '../../components/LoadingCards';
 const Job = () => {
+  const [isLoading,setIsLoading] = useState(false)
   const [jobLists, setJobList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchJob = async () => {
+      setIsLoading(true)
       try {
         const response = await fetch("https://hirehub-springboot.onrender.com/Job/findAll");
         const result = await response.json();
         setJobList(result);
+        setIsLoading(false)
         console.log(result);
       } catch (e) {
         console.log(e);
@@ -58,9 +62,8 @@ const Job = () => {
             className="w-full px-5 py-3 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
           />
         </div>
-         
 
-        {filteredJobs.length > 0 ? (
+        {isLoading?<LoadingCards/>:(filteredJobs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredJobs.map((job,i) => (
               <div key={job.id || i} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-gray-200">
@@ -72,7 +75,7 @@ const Job = () => {
           <div className="text-center text-slate-500 py-10">
             <p className="text-lg">No jobs found matching your search.</p>
           </div>
-        )}
+        ))}
       </div>
     </div>
   );

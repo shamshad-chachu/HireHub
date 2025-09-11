@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setIsRegigterd, setShowSignin, setIsLoged }) => {
   const [formData, setFormData] = useState({
     usernameOrEmail: '',
     password: '',
   });
-
+  const navigate = useNavigate();
   const [loginError, setLoginError] = useState(null);
 
   const handleChange = (e) => {
@@ -36,6 +37,7 @@ const Login = ({ setIsRegigterd, setShowSignin, setIsLoged }) => {
         // Successful login
         setIsLoged(true);
         setShowSignin(false);
+        navigate("/")
         console.log('Login successful!');
         const res = await response.json()
         console.log(res.user)
