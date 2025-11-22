@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import JobCard from '../../components/JobCard/JobCard';
 import { jobs } from '../../assets/jobs';
 import LoadingCards from '../../components/LoadingCards';
+import { motion } from 'motion/react';
+import { Toaster } from 'sonner';
+
 const Job = () => {
   const [isLoading,setIsLoading] = useState(false)
   const [jobLists, setJobList] = useState([]);
@@ -66,9 +69,13 @@ const Job = () => {
         {isLoading?<LoadingCards/>:(filteredJobs.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredJobs.map((job,i) => (
-              <div key={job.id || i} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-gray-200">
+              <motion.div
+              initial={{opacity:0,filter:"blur(10px)",y:10}}
+              whileInView={{opacity:1,filter:"blur(0px)",y:0}}
+              transition={{duration:0.3,delay:i*0.1,ease:"easeInOut"}}
+              key={job.id || i} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden border border-gray-200">
                  <JobCard job={job}/>
-              </div>
+              </motion.div>
             ))}
           </div>
         ) : (

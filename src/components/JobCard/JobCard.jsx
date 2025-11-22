@@ -10,7 +10,7 @@ const JobCard = ({job }) => {
         navigate(`/JobDetails`,{state:job})
     }
   return (
-    <div className="p-6">
+    <div className="p-6" onClick={()=>{HandelApply(job.id)}}>
                   <h3 className="text-xl font-bold text-slate-800 mb-2">{job.title}</h3>
                   <p className="text-slate-600 text-sm mb-2">Experience: {job.experience}</p>
                   <p className="text-slate-600 text-sm mb-2">Location: {job.location}</p>
@@ -20,8 +20,7 @@ const JobCard = ({job }) => {
                      text-white font-bold py-2 px-4 rounded-lg transition duration-150 ease-in-out`} onClick={()=>{setApply(true)}} >
                       {apply?"Applied":"Apply Now"}
                     </a> */}
-                    <a className={"w-full text-center inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg "} 
-                    onClick={()=>{HandelApply(job.id)}} >
+                    <a className={"w-full text-center inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg "}  >
                       Apply Now
                     </a>
                   </div>

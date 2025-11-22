@@ -1,10 +1,16 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Toaster, toast } from 'sonner';
 
 const JobDetails = () => {
   const navigate = useNavigate()
   const goBack=()=>{
-    navigate("/Jobs")
+
+    toast.success("Applied Succesfull")
+    setTimeout(()=>{
+      navigate("/Jobs")
+    },1000)
+    
   }
   const location = useLocation();
   const job = location.state;
@@ -19,6 +25,7 @@ const JobDetails = () => {
 
   return (
     <div className='m-5 p-8 bg-white rounded-lg shadow-lg max-w-4xl mx-auto'>
+      <Toaster position='top-right'/>
       <div className='text-center mb-6'>
         <h1 className='text-3xl font-bold text-gray-900'>{job.title}</h1>
         <p className='text-xl text-gray-700 mt-2'>{job.companyName}</p>
@@ -40,9 +47,7 @@ const JobDetails = () => {
       <div className='text-center'>
         <button 
           className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105'
-          onClick={() => {goBack()
-            alert("Applied Succesfull")}
-          }>
+          onClick={() => {goBack()}}>
           Apply Now
         </button>
       </div>
