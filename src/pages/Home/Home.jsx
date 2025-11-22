@@ -37,11 +37,11 @@ const Home = () => {
             duration:0.3,
             ease:"easeIn"
           }}
-          className="w-full max-w-md aspect-square rounded-3xl shadow-2xl overflow-hidden relative z-20 p-[2px]">
-            <img src={img} alt="A professional office setting" className="object-cover w-full h-full rounded-3xl relative z-20" />
-            <div className="absolute h-full inset-0 w-full aspect-square max-w-md [background-image:conic-gradient(at_center,transparent,red_20%,transparent_30%)] animate-spin [animation-duration:4s]"/>
+          className="w-full max-w-md aspect-square rounded-3xl shadow-2xl ">
+            <img src={img} alt="A professional office setting" className="object-cover w-full h-full rounded-3xl" />
+            {/* <div className="absolute h-full inset-0 w-full aspect-square max-w-md [background-image:conic-gradient(at_center,transparent,red_20%,transparent_30%)] animate-spin [animation-duration:4s]"/>
             <div className="absolute h-full inset-0 w-full aspect-square max-w-md [background-image:conic-gradient(at_center,transparent,blue_20%,transparent_30%)] animate-spin [animation-duration:4s] [animation-delay:1500ms]"/>
-            <div className="absolute h-full inset-0 w-full aspect-square max-w-md [background-image:conic-gradient(at_center,transparent,green_20%,transparent_30%)] animate-spin [animation-duration:4s] [animation-delay:2500ms]"/>
+            <div className="absolute h-full inset-0 w-full aspect-square max-w-md [background-image:conic-gradient(at_center,transparent,green_20%,transparent_30%)] animate-spin [animation-duration:4s] [animation-delay:2500ms]"/> */}
           </motion.div>
         </div>
 
